@@ -86,6 +86,7 @@ class GraphVisualization {
             .force("link", d3.forceLink(this.graphData.links).id(d => d.name))
             .force("x", d3.forceX().strength(0.1).x(this.width / 2))
             .force("y", d3.forceY().strength(0.1).y(this.height / 2))
+            .force("chargelink", d3.forceManyBody().strength(-10))
             .on("tick", this.ticked);
   
         // Initialize SVG elements
@@ -547,6 +548,9 @@ class GraphVisualization {
         return el;
       }
     }
+
+
+   
 
   const graphViz = new GraphVisualization();
   graphViz.init();

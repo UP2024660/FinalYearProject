@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="style.css">
-
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-<title>Active Learning Design</title>
-
-<header>
-    <h1>Active Learning Design</h1>
-    <span class = functions title="Drag and Drop a JSON file onto the page to add data!">Drop JSON file here!</span>
-    <a id="downloadjson" download = "LearningGraph.json">download JSON data</a>
-    <a id="downloadsvg" download = "LearningGraph.svg">download SVG data</a>
-</header>
-
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Active Learning Design</title>            
+</head>
 <body>
-    <svg width="800" height="800"></svg>
-    <button id="addnode">Add Node</button>
-    <button id="deletenode">Delete Node</button>
+    <header>
+        <h1>Active Learning Design</h1>
+        <span class="functions" title="Drag and Drop a JSON file onto the page to add data!">Drop JSON file here!</span>
+        <a id="downloadjson" download="LearningGraph.json">download JSON data</a>
+        <a id="downloadsvg" download="LearningGraph.svg">download SVG data</a>
+    </header>
+    
+    <div class="split left">
+        <div class="centered"></div>
+        <h3>Node Information</h3>
+    </div>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script defer type="module" src="test.js"></script>
+    <div id="divider"></div>
+    
+    <div class="split right">
+        <div class="centered">
 
+            <h2>Graph View</h2>
+            <svg width="800" height="800"></svg>
+            <div class="buttons">
+                <button id="addnode">Add Node</button>
+                <button id="deletenode">Delete Node</button>
+                <button id="editnode">Edit Node</button>
+                <button id="addlink">Add Connection</button>
+                <button id="deletelink">Delete Connection</button>
+            </div>
+
+            <script src="https://d3js.org/d3.v7.min.js"></script>
+            <script defer type="module" src="test.js"></script> 
+        </div>
+    </div>
 </body>
-
 </html>
-

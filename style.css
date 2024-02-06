@@ -17,7 +17,6 @@
 }
 
 
-
 * {
   margin: 0;
   padding: 0;
@@ -38,6 +37,7 @@ body>* {
 }
 
 body>header        { grid-area: title; }
+body>header { z-index: 2;}
 body>header {
   grid-area: title;
   background-color: var(--purple);
@@ -63,6 +63,48 @@ body button {
   transition: background-color 0.3s ease;
 }
 
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #FFFFFF;
+  top: 80px;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: #6699FF;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+#divider {
+  position: absolute;
+  top: 69px;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background: #666;
+  z-index: 10;
+}
 body button:hover {
   background-color: var(--alt-blue);
 }
@@ -123,9 +165,3 @@ text.shadow {
   margin-left: 1rem;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--face);
-}
