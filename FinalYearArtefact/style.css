@@ -1,0 +1,276 @@
+:root {
+    --purple: #61135f;
+    --blue: #009fff;
+    --alt-blue: #0080e0;
+    --bg: #fff;
+    --fg: #000;
+    --grid:
+      "title" auto
+      "output" auto
+      "control" 1fr
+      / 1fr;
+    --face: 'Helvetica Neue', 'sans serif';
+  
+    --barfg: var(--bg);
+    --taskbg: #61135f33;
+    --highlight: #EEEE33FF;
+  }
+  
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--face);
+  }
+  
+  body {
+    display: grid;
+    grid-template: var(--grid);
+    color: var(--fg);
+    background-color: var(--bg);
+    height: 100vh;
+  }
+  
+  body>* {
+    padding: 1rem;
+  }
+  
+  body>header        { grid-area: title; }
+  body>header { z-index: 2;}
+  body>header {
+    grid-area: title;
+    background-color: var(--purple);
+    color: var(--bg);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100vw;
+  }
+  
+  
+  
+  .highlight {
+    background-color: yellow;
+  }
+  
+  textarea{
+    border : none;
+  }
+  
+  #info {width: 100%;}
+  
+  svg {
+  display: flex;}
+  
+  body button {
+    background-color: var(--purple);
+    color: var(--bg);
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    background-color: #FFFFFF;
+    top: 80px;
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    
+  }
+  
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  
+  
+  body button:hover {
+    background-color: var(--alt-blue);
+  }
+  
+  /* Add this if you want to remove default button styles */
+  body button:focus {
+    outline: none;
+  }
+  
+  /* Add this if you want to add a subtle box shadow */
+  body button:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+    
+  line.link {
+    fill: none;
+    stroke: #666;
+    stroke-width: 1.5px;
+  }
+  
+  line.link.hidden {
+    fill: none;
+    stroke: none;
+    stroke-width: 1.5px;
+  }
+  
+  marker#LEVEL {fill: green;}
+  
+  line.link.LEVEL {stroke: green;}
+  
+  marker#CORE {  fill: green;}
+  
+  line.link.CORE {  stroke: orange;}
+  
+  marker#OPTIONAL {  fill: greenyellow;}
+  
+  line.link.OPTIONAL {  stroke: greenyellow;}
+  line.link.OPTIONAL {  stroke-dasharray: 5,5;}
+  
+  
+  /* Modal styles (customize as needed) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  text {
+    font: 10px sans-serif;
+    pointer-events: none;
+  }
+  
+  text.shadow {
+    stroke: #fff;
+    stroke-width: 3px;
+    stroke-opacity: .8;
+  }
+  
+  .functions,
+  [download] {
+    border: grey thin solid;
+    background-color: var(--bg);
+    color: var(--fg);
+    display: block;
+    padding: 0.25em;
+    border-radius: 0.25em;
+    margin-left: 1rem;
+  }
+  
+  .popup{
+    background-color: #ffffff;
+    width: 450px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    font-family: "Poppins",sans-serif;
+    display: none;
+    text-align: center;
+    z-index: 10;
+  }
+  .popup button{
+    display: block;
+    margin:  0 0 20px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: #c5c5c5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .popup p{
+    font-size: 14px;
+    text-align: justify;
+    margin: 20px 0;
+    line-height: 25px;
+  }
+  
+  .endpopup{
+    background-color: #ffffff;
+    width: 450px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    font-family: "Poppins",sans-serif;
+    display: none;
+    text-align: center;
+    visibility: hidden;
+  }
+  
+  .open-endpopup{
+    display: none;
+    visibility: visible;
+  }
+  
+  
+  .endpopup button{
+    display: block;
+    margin:  0 0 20px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: #c5c5c5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .endpopup p{
+    font-size: 14px;
+    text-align: justify;
+    margin: 20px 0;
+    line-height: 25px;
+  }
